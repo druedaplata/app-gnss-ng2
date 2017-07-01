@@ -1,20 +1,20 @@
-<div class="container">
+<div class="row">
 	<form #mapInputForm="ngForm">
-	<div class="col-md-6 col-sm-6">
-		<div class="form-group">
-			<label for="date">Date</label>
-			<input type="text" [(ngModel)]="model.date" class="form-control" name="date" required placeholder="dd/mm/yyyy">
-			<label for="time">Time</label>
-			<input type="text" [(ngModel)]="model.time" class="form-control" name="time" required placeholder="hh:mm">
+		<div class="col-md-6 col-sm-6">
+			<div class="form-group">
+				<label for="date">Date</label>
+				<input type="text" [(ngModel)]="model.date" class="form-control" name="date" required placeholder="dd/mm/yyyy">
+				<label for="time">Time</label>
+				<input type="text" [(ngModel)]="model.time" class="form-control" name="time" required placeholder="hh:mm">				
+			</div>
 		</div>
-	</div>
-	<div class="col-md-6 col-sm-6">	
-		<div class="form-group">
-			<label for="lat">Lat</label>
-			<input type="text" [(ngModel)]="model.lat" class="form-control" name="lat" required placeholder="37.775">
-			<label for="lng">Lng</label>
-			<input type="text" [(ngModel)]="model.lng" class="form-control" name="lng" required placeholder="-122.434">
-		</div>	
-	</div>
+		<div class="col-md-6 col-sm-6">
+			<div class="form-group">
+				<label for="lat">Lat</label>
+				<input type="text" [(ngModel)]="model.lat" class="form-control" name="lat" required placeholder="37.775">
+				<label for="lng">Lng</label>
+				<input type="text" [(ngModel)]="model.lng" class="form-control" name="lng" required placeholder="-122.434">
+			</div>	
+		</div>
 	</form>
 </div>
