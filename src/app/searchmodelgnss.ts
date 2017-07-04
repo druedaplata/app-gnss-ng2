@@ -7,4 +7,12 @@ export class SearchModelGnss {
     public lng: string
   ) { }
 
+  getPosition() {
+    return {lat: Number(this.lat), lng: Number(this.lng) };
+  }
+
+  getPositionString() {
+    return this.lat + ', ' + this.lng;
+  }
+
 }

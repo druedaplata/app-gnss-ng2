@@ -1,10 +1,11 @@
 <div class="col-md-6 col-sm-12">
 	<ngui-map
 		zoom="13"
-		center="37.775, -122.434"
+		(mapReady$)="onMapReady($event)"
+		center="mapCenter"
 		(mapClick)="onMapClick($event)">
 		<marker [position]="markerPos"></marker>
 	</ngui-map>
-	<app-map-input-form [model]="model"></app-map-input-form>
+	<app-map-input-form [model]="model" (modelChanged)="getModel($event)" ></app-map-input-form>
 </div>
 

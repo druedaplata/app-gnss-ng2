@@ -1,5 +1,5 @@
 import { SearchModelGnss } from '../searchmodelgnss';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -11,12 +11,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MapInputFormComponent implements OnInit {
 
   @Input() model;
+  @Output() modelChanged: EventEmitter<any> = new EventEmitter();
 
   submitted = false;
 
   constructor() {}
 
   ngOnInit() {
+  }
+
+  sendChange() {
+    this.modelChanged.emit(this.model);
   }
 
 

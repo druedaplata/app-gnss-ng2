@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
+  public map;
   public markerPos;
   public model = new SearchModelGnss('', '', '', '');
 
@@ -17,11 +18,22 @@ export class MapComponent implements OnInit {
   ngOnInit() {
   }
 
+  onMapReady(event) {
+    this.map = event;
+    console.log(this.map);
+  }
+
   onMapClick(event) {
-    event.target.panTo(event.latLng);
-    this.markerPos = event.latLng;
     this.model = new SearchModelGnss('', '', event.latLng.lat(), event.latLng.lng());
+    this.markerPos = this.model.getPosition();
+    this.map.panTo(this.markerPos);
     // todo: add changes for date and time
+  }
+
+  getModel(newModel) {
+    this.model = newModel;
+    this.markerPos = newModel.getPosition();
+    this.map.panTo(this.markerPos);
   }
 
 }
