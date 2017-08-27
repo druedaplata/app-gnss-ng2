@@ -7,5 +7,6 @@
 		<marker [position]="markerPos"></marker>
 	</ngui-map>
 	<app-map-input-form [model]="model" (modelChanged)="getModel($event)" ></app-map-input-form>
+	<button (click)="search($event, item)" [disabled]="!isValid">Buscar!</button>
 </div>
 
